@@ -6,6 +6,7 @@ const http = require('http');
 const url = require('url');
 const { StringDecoder } = require('string_decoder');
 const routeHandler = require('./lib/routehandler');
+const userRouteHandler = require('./user/userRoute');
 
 const httpServer = http.createServer((req, res) => {
   //parse the incoming url
@@ -68,7 +69,8 @@ httpServer.listen(8080, () => {
 const router = {
   ping: routeHandler.ping,
   books: routeHandler.Books,
-  notfound: routeHandler.notfound
+  notfound: routeHandler.notfound,
+  user: userRouteHandler.User,
 }
 
 
